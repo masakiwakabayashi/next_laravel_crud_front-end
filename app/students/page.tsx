@@ -1,8 +1,9 @@
+import Students from '@/components/Students'
 
 const page = () => {
     return (
         <div>
-            Enter
+            <Students />
         </div>
     );
 }

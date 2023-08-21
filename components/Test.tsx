@@ -13,7 +13,8 @@ const Test = () => {
     const [password, setPassword] = useState('');
 
     const postData = async () => {
-        axios.get('http://localhost:8080/sanctum/csrf-cookie').then((res: any) => {
+        // CSRF保護の初期化
+        axios.get('http://localhost:8080/sanctum/csrf-cookie', { withCredentials: true }).then((res: any) => {
             console.log(res);
             // ログイン処理
             http.post('/api/login', {email, password}).then((res: any) => {
